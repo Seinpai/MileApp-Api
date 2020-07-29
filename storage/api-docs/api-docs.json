@@ -1,0 +1,158 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Mile App OpenAPI/Swagger",
+        "description": "API documentation",
+        "contact": {
+            "email": "hiz.husein@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/package": {
+            "get": {
+                "tags": [
+                    "package"
+                ],
+                "summary": "Returns all Package response",
+                "description": "A sample get request to test out the API",
+                "operationId": "package1",
+                "responses": {
+                    "200": {
+                        "description": "Packages retrieved successfully."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "package"
+                ],
+                "summary": "Create new Package",
+                "operationId": "package2",
+                "requestBody": {
+                    "description": "Create new Package",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Package created successfully.",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/package/{packageId}": {
+            "get": {
+                "tags": [
+                    "package"
+                ],
+                "summary": "Details of the Package",
+                "operationId": "package3",
+                "parameters": [
+                    {
+                        "name": "packageId",
+                        "in": "path",
+                        "description": "ID of Package",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Package retrieved successfully.",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "package"
+                ],
+                "summary": "Update a Package",
+                "operationId": "package5",
+                "parameters": [
+                    {
+                        "name": "packageId",
+                        "in": "path",
+                        "description": "ID of Package",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Package updated successfully.",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "package"
+                ],
+                "summary": "Update a Package",
+                "operationId": "package4",
+                "parameters": [
+                    {
+                        "name": "packageId",
+                        "in": "path",
+                        "description": "ID of Package",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Create new Package",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Package updated successfully.",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "package"
+        }
+    ]
+}
